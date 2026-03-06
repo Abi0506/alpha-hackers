@@ -45,10 +45,10 @@ function Sparkline({ data, color }: { data: number[]; color: string }) {
 }
 
 const metrics = [
-  { label: 'Revenue ARR', value: 12, prefix: '₹', suffix: ' Cr', trend: [2, 4, 5, 7, 9, 12], growth: '+140% YoY' },
-  { label: 'Enterprise Clients', value: 45, suffix: '+', trend: [8, 14, 22, 30, 38, 45], growth: '+18 this year' },
-  { label: 'Data Points/Day', value: 24, suffix: 'L', trend: [5, 8, 12, 16, 20, 24], growth: '+380% YoY' },
-  { label: 'Net Revenue Retention', value: 135, suffix: '%', trend: [105, 112, 118, 125, 130, 135], growth: 'Top quartile' },
+  { label: 'Routes Mapped', value: 125, suffix: 'K+', trend: [20, 40, 60, 85, 105, 125], growth: '+48% this year' },
+  { label: 'Freight Analysed', prefix: '₹', value: 230, suffix: ' Cr', trend: [30, 65, 110, 150, 190, 230], growth: '₹2.3B+ total' },
+  { label: 'Forecast Accuracy', value: 92, suffix: '.8%', trend: [78, 82, 85, 88, 91, 92], growth: 'Industry best' },
+  { label: 'Enterprise Clients', value: 12, suffix: '', trend: [2, 4, 6, 8, 10, 12], growth: '+5 this quarter' },
 ];
 
 const infraStats = [
@@ -59,17 +59,17 @@ const infraStats = [
 ];
 
 const milestones = [
-  { year: '2022', event: 'Founded — First freight-rate prediction model deployed', tag: 'Inception' },
-  { year: '2023', event: 'Onboarded 25 enterprise clients across FMCG, pharma, auto', tag: 'Traction' },
-  { year: '2024', event: 'Launched National Logistics Grid covering 15 hub cities', tag: 'Scale' },
-  { year: '2025', event: 'Platform processes 2.4M data points/day, 94.2% accuracy', tag: 'Now' },
+  { year: '2023', event: 'Founded — Built first freight-rate prediction engine for Indian routes', tag: 'Inception' },
+  { year: '2024', event: 'Launched LoRRI platform with AI benchmarking and delay prediction', tag: 'Product' },
+  { year: '2025', event: 'Onboarded 12 enterprise clients across FMCG, auto, chemicals', tag: 'Traction' },
+  { year: '2026', event: 'National Logistics Grid: 125K routes, 92.8% forecast accuracy', tag: 'Now' },
 ];
 
 const competitiveEdge = [
-  { moat: 'Proprietary Data Flywheel', desc: 'Every prediction improves the model — 2.4M data points/day compound our accuracy advantage.' },
-  { moat: 'National Logistics Grid', desc: 'India\'s first AI-mapped freight corridor network covering 15 hub cities and 19 corridors.' },
-  { moat: 'Enterprise Switching Cost', desc: '135% NRR demonstrates deep integration into customer workflows.' },
-  { moat: 'Full-Stack AI Platform', desc: '14 ML models in production — not a feature, but the core infrastructure layer.' },
+  { moat: 'Proprietary Data Flywheel', desc: 'Every prediction improves the model — 125K+ routes worth of data compounds our accuracy advantage.' },
+  { moat: 'National Logistics Grid', desc: 'India\'s first AI-mapped freight corridor network covering 15 hub cities and 19 active corridors.' },
+  { moat: 'India-Specific Intelligence', desc: 'Monsoon risk, state border delays, highway congestion — factors no global tool captures.' },
+  { moat: 'Full-Stack AI Platform', desc: 'Freight prediction, delay forecasting, route optimization, and carrier matching in one platform.' },
 ];
 
 export default function EnterpriseSection() {
@@ -82,13 +82,13 @@ export default function EnterpriseSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="badge mb-4">For Investors &amp; Partners</span>
+          <span className="badge mb-4">Platform Metrics</span>
           <h2 className="text-3xl md:text-4xl font-bold text-deep-blue tracking-tight mb-3">
             Built on data. Measured by impact.
           </h2>
           <p className="text-neutral-500 max-w-xl mx-auto">
             LogisticsNow is building the AI infrastructure layer for India&apos;s $380B logistics market —
-            with compounding data moats and enterprise-grade traction.
+            with real predictions, real routes, and real enterprise traction.
           </p>
         </motion.div>
 

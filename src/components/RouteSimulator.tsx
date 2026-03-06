@@ -76,14 +76,37 @@ export default function RouteSimulator() {
   const [result, setResult] = useState<ReturnType<typeof simulateRoute> | null>(null);
   const [animating, setAnimating] = useState(false);
 
-  const handleSimulate = useCallback(() => {
+  const handleSimulate = useCallback(async () => {
     if (!origin || !destination || origin === destination) return;
     setAnimating(true);
     setResult(null);
-    setTimeout(() => {
+    try {
+      const res = await fetch('/api/predict/freight', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ origin, destination, truckType: 'open_body', weight: 10 }),
+      });
+      const data = await res.json();
+      const distance = data.delivery?.distance_km ?? 0;
+      const waypoints = getWaypoints(origin, destination);
+      const co2 = Math.round(distance * 0.12);
+      setResult({
+        distance,
+        baseRate: Math.round(data.optimization?.market_rate ?? 0),
+        optimizedRate: Math.round(data.optimization?.ai_optimized_rate ?? 0),
+        transit: Math.round(data.delivery?.estimated_hours ?? 0),
+        co2,
+        co2Saved: Math.round(co2 * 0.15),
+        waypoints,
+        savings: Math.round(data.optimization?.savings_pct ?? 0),
+        fuelCost: Math.round(distance * 3.8),
+        tollCost: Math.round(distance * 1.2),
+      });
+    } catch {
       setResult(simulateRoute(origin, destination));
+    } finally {
       setAnimating(false);
-    }, 1200);
+    }
   }, [origin, destination]);
 
   const routePath = result ? buildRoutePath(origin, destination, result.waypoints) : '';

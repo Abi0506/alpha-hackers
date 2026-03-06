@@ -18,12 +18,7 @@ const roles = [
   { title: 'DevOps Engineer', team: 'Infrastructure', location: 'Bengaluru', type: 'Full-time' },
 ];
 
-const techStack = [
-  { category: 'AI / ML', tools: ['PyTorch', 'scikit-learn', 'XGBoost', 'TensorFlow', 'Hugging Face'] },
-  { category: 'Backend', tools: ['Python', 'FastAPI', 'Node.js', 'PostgreSQL', 'Redis'] },
-  { category: 'Frontend', tools: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Recharts'] },
-  { category: 'Infra', tools: ['AWS', 'Docker', 'Kubernetes', 'Kafka', 'Terraform'] },
-];
+
 
 const projects = [
   {
@@ -71,29 +66,7 @@ export default function CareersSection() {
           ))}
         </div>
 
-        {/* Tech Stack */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h3 className="text-xl font-semibold text-deep-blue text-center mb-8">Our Tech Stack</h3>
-          <div className="grid md:grid-cols-4 gap-4">
-            {techStack.map((ts) => (
-              <div key={ts.category} className="p-5 bg-white rounded-xl border border-neutral-100">
-                <div className="text-[10px] font-bold text-cyan uppercase tracking-wider mb-3">{ts.category}</div>
-                <div className="flex flex-wrap gap-2">
-                  {ts.tools.map((tool) => (
-                    <span key={tool} className="px-2.5 py-1 text-xs font-medium bg-soft-grey text-neutral-600 rounded-md">
-                      {tool}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+
 
         {/* Engineering Projects */}
         <motion.div
@@ -136,16 +109,16 @@ export default function CareersSection() {
                   <h4 className="text-sm font-semibold text-deep-blue">{role.title}</h4>
                   <p className="text-xs text-neutral-400 mt-0.5">{role.team} · {role.location} · {role.type}</p>
                 </div>
-                <button className="mt-3 sm:mt-0 text-sm font-medium text-cyan hover:text-cyan-hover transition-colors">
+                <a href={`mailto:24z108@psgitech.ac.in?subject=Application for ${role.title}&body=Hi, I would like to apply for the ${role.title} position.`} className="mt-3 sm:mt-0 text-sm font-medium text-cyan hover:text-cyan-hover transition-colors">
                   Apply →
-                </button>
+                </a>
               </div>
             ))}
           </div>
 
           <div className="text-center mt-8">
             <p className="text-sm text-neutral-500 mb-3">{`Don't see your role?`}</p>
-            <button className="btn-secondary">Send us your resume</button>
+            <a href="mailto:24z108@psgitech.ac.in?subject=Resume Submission — LogisticsNow" className="btn-secondary inline-block">Send us your resume</a>
           </div>
         </div>
       </div>

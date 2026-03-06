@@ -185,13 +185,15 @@ export default function ContactFooter() {
             </div>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-xs text-neutral-500">© 2026 LogisticsNow. All rights reserved.</p>
-            <div className="flex gap-4">
-              {['Twitter', 'LinkedIn', 'GitHub'].map((s) => (
-                <a key={s} href="#" className="text-xs text-neutral-500 hover:text-white transition-colors">{s}</a>
-              ))}
+          <div className="mt-12 pt-8 border-t border-white/10 flex flex-col items-center gap-3">
+            <div className="flex flex-col sm:flex-row justify-between items-center w-full gap-4">
+              <p className="text-xs text-neutral-500">© 2026 LogisticsNow. All rights reserved.</p>
+              <div className="flex gap-4">
+                <a href="https://x.com/LogisticsNowLN" target="_blank" rel="noopener noreferrer" className="text-xs text-neutral-500 hover:text-white transition-colors">Twitter</a>
+                <a href="https://www.linkedin.com/company/logisticsnow/?originalSubdomain=in" target="_blank" rel="noopener noreferrer" className="text-xs text-neutral-500 hover:text-white transition-colors">LinkedIn</a>
+              </div>
             </div>
+            <p className="text-xs text-neutral-500">Developed by Harshini Y, Adhithya J, Abishek N, Arya A.</p>
           </div>
         </div>
       </footer>
