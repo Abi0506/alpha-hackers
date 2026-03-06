@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function ContactFooter() {
   const [form, setForm] = useState({ name: '', email: '', company: '', message: '' });
@@ -129,9 +130,11 @@ export default function ContactFooter() {
             <div>
               <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-4">Platform</h4>
               <ul className="space-y-2.5">
-                {['AI Technology', 'Data Platform', 'Route Optimization', 'Freight Benchmarking', 'Delay Prediction'].map((l) => (
-                  <li key={l}><a href="#" className="text-sm text-neutral-400 hover:text-white transition-colors">{l}</a></li>
-                ))}
+                <li><Link href="/ai-technology" className="text-sm text-neutral-400 hover:text-white transition-colors">AI Technology</Link></li>
+                <li><Link href="/platform" className="text-sm text-neutral-400 hover:text-white transition-colors">Data Platform</Link></li>
+                <li><Link href="/platform" className="text-sm text-neutral-400 hover:text-white transition-colors">Route Optimization</Link></li>
+                <li><Link href="/ai-technology" className="text-sm text-neutral-400 hover:text-white transition-colors">Freight Benchmarking</Link></li>
+                <li><Link href="/ai-technology" className="text-sm text-neutral-400 hover:text-white transition-colors">Delay Prediction</Link></li>
               </ul>
             </div>
 
@@ -139,9 +142,11 @@ export default function ContactFooter() {
             <div>
               <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-4">Company</h4>
               <ul className="space-y-2.5">
-                {['About', 'Customers', 'Careers', 'Blog', 'Contact'].map((l) => (
-                  <li key={l}><a href="#" className="text-sm text-neutral-400 hover:text-white transition-colors">{l}</a></li>
-                ))}
+                <li><Link href="/" className="text-sm text-neutral-400 hover:text-white transition-colors">About</Link></li>
+                <li><Link href="/customers" className="text-sm text-neutral-400 hover:text-white transition-colors">Customers</Link></li>
+                <li><Link href="/careers" className="text-sm text-neutral-400 hover:text-white transition-colors">Careers</Link></li>
+                <li><Link href="/insights" className="text-sm text-neutral-400 hover:text-white transition-colors">Blog</Link></li>
+                <li><a href="#contact" className="text-sm text-neutral-400 hover:text-white transition-colors">Contact</a></li>
               </ul>
             </div>
 
@@ -149,9 +154,11 @@ export default function ContactFooter() {
             <div>
               <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-4">Resources</h4>
               <ul className="space-y-2.5">
-                {['Documentation', 'API Reference', 'System Status', 'Privacy Policy', 'Terms'].map((l) => (
-                  <li key={l}><a href="#" className="text-sm text-neutral-400 hover:text-white transition-colors">{l}</a></li>
-                ))}
+                <li><Link href="/insights" className="text-sm text-neutral-400 hover:text-white transition-colors">Documentation</Link></li>
+                <li><Link href="/platform" className="text-sm text-neutral-400 hover:text-white transition-colors">API Reference</Link></li>
+                <li><a href="#" className="text-sm text-neutral-400 hover:text-white transition-colors">System Status</a></li>
+                <li><a href="#" className="text-sm text-neutral-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="text-sm text-neutral-400 hover:text-white transition-colors">Terms</a></li>
               </ul>
             </div>
           </div>

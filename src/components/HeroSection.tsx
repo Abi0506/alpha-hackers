@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 /* ─── Animated counter ─── */
 function Counter({ end, suffix = '', prefix = '' }: { end: number; suffix?: string; prefix?: string }) {
@@ -124,11 +125,11 @@ export default function HeroSection() {
               Trusted by 120+ enterprises
             </div>
 
-            <h1 className="text-hero text-deep-blue mb-5 max-w-[540px]">
+            <h1 className="text-[32px] md:text-[40px] lg:text-hero text-deep-blue mb-5 max-w-[540px] leading-[1.1] font-bold tracking-tight">
               AI Intelligence for Modern Logistics Networks
             </h1>
 
-            <p className="text-lg text-neutral-500 mb-8 max-w-[480px] leading-relaxed">
+            <p className="text-base md:text-lg text-neutral-500 mb-8 max-w-[480px] leading-relaxed">
               LoRRI transforms logistics decisions using predictive AI and real-time freight intelligence. Reduce costs by 18%, predict delays before they happen.
             </p>
 
@@ -139,7 +140,7 @@ export default function HeroSection() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
-              <a href="#platform" className="btn-secondary">Explore Platform</a>
+              <Link href="/platform" className="btn-secondary">Explore Platform</Link>
             </div>
 
             {/* Metrics strip */}

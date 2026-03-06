@@ -2,14 +2,15 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 
 const navLinks = [
-  { label: 'Platform', href: '#platform' },
-  { label: 'AI Technology', href: '#ai-technology' },
-  { label: 'Solutions', href: '#solutions' },
-  { label: 'Customers', href: '#customers' },
-  { label: 'Insights', href: '#insights' },
-  { label: 'Careers', href: '#careers' },
+  { label: 'Platform', href: '/platform' },
+  { label: 'AI Technology', href: '/ai-technology' },
+  { label: 'Solutions', href: '/solutions' },
+  { label: 'Customers', href: '/customers' },
+  { label: 'Insights', href: '/insights' },
+  { label: 'Careers', href: '/careers' },
 ];
 
 export default function Navbar() {
@@ -27,7 +28,7 @@ export default function Navbar() {
       scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm' : 'bg-transparent'
     }`}>
       <div className="max-w-content mx-auto px-5 md:px-8 flex items-center justify-between h-16">
-        <a href="#" className="flex items-center gap-2.5">
+        <Link href="/" className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-lg bg-deep-blue flex items-center justify-center">
             <svg className="w-4 h-4 text-cyan" viewBox="0 0 16 16" fill="none">
               <path d="M8 2L14 8L8 14L2 8L8 2Z" fill="currentColor" opacity="0.9"/>
@@ -36,13 +37,13 @@ export default function Navbar() {
           </div>
           <span className="text-lg font-bold text-deep-blue tracking-tight">LoRRI</span>
           <span className="text-[10px] font-semibold text-cyan bg-cyan-light px-1.5 py-0.5 rounded-md uppercase tracking-wider">AI</span>
-        </a>
+        </Link>
 
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a key={link.label} href={link.href} className="text-sm text-neutral-500 hover:text-deep-blue transition-colors font-medium">
+            <Link key={link.label} href={link.href} className="text-sm text-neutral-500 hover:text-deep-blue transition-colors font-medium">
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -65,7 +66,7 @@ export default function Navbar() {
           <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="lg:hidden bg-white border-t border-neutral-100 overflow-hidden">
             <div className="px-5 py-4 space-y-1">
               {navLinks.map((link) => (
-                <a key={link.label} href={link.href} onClick={() => setMobileOpen(false)} className="block py-2.5 text-sm font-medium text-neutral-500 hover:text-deep-blue">{link.label}</a>
+                <Link key={link.label} href={link.href} onClick={() => setMobileOpen(false)} className="block py-2.5 text-sm font-medium text-neutral-500 hover:text-deep-blue">{link.label}</Link>
               ))}
               <div className="pt-3 border-t border-neutral-100">
                 <a href="#contact" onClick={() => setMobileOpen(false)} className="btn-primary w-full text-center text-sm !py-2.5">Request Demo</a>

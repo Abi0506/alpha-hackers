@@ -95,10 +95,17 @@ body {
     box-shadow: var(--shadow-md);
     border-color: var(--neutral-300);
   }
+  .card-interactive {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
   .card-interactive:hover {
     box-shadow: var(--shadow-lg);
     transform: translateY(-1px);
-    transition: all 0.2s ease;
+    border-color: var(--cyan);
   }
 
   /* Section padding */

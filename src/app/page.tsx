@@ -1,18 +1,21 @@
+import dynamic from 'next/dynamic';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import PlatformSection from '@/components/PlatformSection';
 import AITechnologySection from '@/components/AITechnologySection';
 import SolutionsSection from '@/components/SolutionsSection';
-import DashboardSection from '@/components/DashboardSection';
 import CustomersSection from '@/components/CustomersSection';
-import MaturityAssessment from '@/components/MaturityAssessment';
-import FreightBenchmark from '@/components/FreightBenchmark';
-import DelayPrediction from '@/components/DelayPrediction';
-import InsightsSection from '@/components/InsightsSection';
-import CareersSection from '@/components/CareersSection';
 import ContactFooter from '@/components/ContactFooter';
-import AIAssistant from '@/components/AIAssistant';
-import StickyCta from '@/components/StickyCta';
+
+// Lazy-loaded heavy interactive components
+const DashboardSection = dynamic(() => import('@/components/DashboardSection'), { ssr: false });
+const MaturityAssessment = dynamic(() => import('@/components/MaturityAssessment'), { ssr: false });
+const FreightBenchmark = dynamic(() => import('@/components/FreightBenchmark'), { ssr: false });
+const DelayPrediction = dynamic(() => import('@/components/DelayPrediction'), { ssr: false });
+const InsightsSection = dynamic(() => import('@/components/InsightsSection'));
+const CareersSection = dynamic(() => import('@/components/CareersSection'));
+const AIAssistant = dynamic(() => import('@/components/AIAssistant'), { ssr: false });
+const StickyCta = dynamic(() => import('@/components/StickyCta'), { ssr: false });
 
 export default function Home() {
   return (
