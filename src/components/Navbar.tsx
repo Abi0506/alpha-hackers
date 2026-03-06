@@ -50,6 +50,7 @@ export default function Navbar() {
 
         <div className="hidden lg:flex items-center gap-3">
           <a href="#contact" className="text-sm font-medium text-neutral-500 hover:text-deep-blue transition-colors">Contact</a>
+          <Link href="/login" className="text-sm font-semibold text-deep-blue border-2 border-deep-blue rounded-lg px-5 py-2 hover:bg-deep-blue hover:text-white transition-colors">Login</Link>
           <a href="#contact" className="btn-primary text-sm !py-2.5 !px-5">Request Demo</a>
         </div>
 
@@ -69,7 +70,8 @@ export default function Navbar() {
               {navLinks.map((link) => (
                 <Link key={link.label} href={link.href} onClick={() => setMobileOpen(false)} className="block py-2.5 text-sm font-medium text-neutral-500 hover:text-deep-blue">{link.label}</Link>
               ))}
-              <div className="pt-3 border-t border-neutral-100">
+              <div className="pt-3 border-t border-neutral-100 space-y-2">
+                <Link href="/login" onClick={() => setMobileOpen(false)} className="block text-center text-sm font-semibold text-deep-blue border-2 border-deep-blue rounded-lg px-5 py-2.5 hover:bg-deep-blue hover:text-white transition-colors">Login</Link>
                 <a href="#contact" onClick={() => setMobileOpen(false)} className="btn-primary w-full text-center text-sm !py-2.5">Request Demo</a>
               </div>
             </div>
