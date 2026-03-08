@@ -39,7 +39,7 @@ export default function MaturityAssessment() {
     setStep('loading');
     setError('');
     try {
-      const res = await fetch('/api/assess/maturity', {
+      const res = await fetch('https://alpha-hackers-1-4hsj.onrender.com/api/assess/maturity', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

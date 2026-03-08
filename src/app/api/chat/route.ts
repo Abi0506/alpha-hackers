@@ -41,7 +41,7 @@ async function getMLResponse(message: string, baseUrl: string): Promise<string> 
       const dest = mentioned[1].charAt(0).toUpperCase() + mentioned[1].slice(1);
 
       try {
-        const res = await fetch(`${baseUrl}/api/predict/freight-rate`, {
+        const res = await fetch('https://alpha-hackers-1-4hsj.onrender.com/api/predict/freight-rate', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ origin, destination: dest, truckType: '32ft MXL' }),
@@ -75,7 +75,7 @@ async function getMLResponse(message: string, baseUrl: string): Promise<string> 
 
     if (matchedRoute) {
       try {
-        const res = await fetch(`${baseUrl}/api/predict/delay`, {
+        const res = await fetch('https://alpha-hackers-1-4hsj.onrender.com/api/predict/delay', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ route: matchedRoute.split(' → ').map(c => c.charAt(0).toUpperCase() + c.slice(1)).join(' → '), weather: 'Rain', traffic: 'Moderate' }),

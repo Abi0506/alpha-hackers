@@ -35,7 +35,7 @@ export default function DelayPrediction() {
     setResult(null);
     setError('');
     try {
-      const res = await fetch('/api/predict/delay', {
+      const res = await fetch('https://alpha-hackers-1-4hsj.onrender.com/api/predict/delay', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ route, weather, traffic }),
