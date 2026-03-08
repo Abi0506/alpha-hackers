@@ -27,7 +27,7 @@ Capabilities on this platform:
 Be helpful, concise, and professional. When users ask about freight rates or delays, suggest they try the interactive tools on the platform. Always respond in context of Indian logistics.`;
 
 // ─── Internal ML-powered responses (fallback when no LLM API key) ────────────
-async function getMLResponse(message: string, baseUrl: string): Promise<string> {
+async function getMLResponse(message: string): Promise<string> {
   const lower = message.toLowerCase();
 
   // Freight rate questions — call the real ML model
@@ -191,7 +191,6 @@ export async function POST(request: NextRequest) {
     }
 
     const sanitized = message.slice(0, 500).trim();
-    const baseUrl = request.nextUrl.origin;
 
     // Try Gemini API first (if key is configured)
     const geminiKey = process.env.GEMINI_API_KEY;
@@ -207,7 +206,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Fallback: ML-powered context-aware response
-    const reply = await getMLResponse(sanitized, baseUrl);
+    const reply = await getMLResponse(sanitized);
     return NextResponse.json({
       reply,
       model: 'LogisticsNow Assistant v2.0',
