@@ -82,7 +82,7 @@ export default function RouteSimulator() {
     setResult(null);
     const fallback = simulateRoute(origin, destination);
     try {
-      const res = await fetch('https://alpha-hackers-1-4hsj.onrender.com/api/predict/freight', {
+      const res = await fetch('/api/predict/freight', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         // Use a truck type supported by the freight API route.

@@ -31,7 +31,7 @@ export default function DashboardSection() {
 
   const fetchData = useCallback(async () => {
     try {
-      const res = await fetch('https://alpha-hackers-1-4hsj.onrender.com/api/dashboard');
+      const res = await fetch('/api/dashboard');
       const json = await res.json();
       setData(json);
       setLastUpdate(new Date(json.timestamp).toLocaleTimeString());

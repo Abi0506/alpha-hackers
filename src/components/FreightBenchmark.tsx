@@ -32,7 +32,7 @@ export default function FreightBenchmark() {
     setError('');
     setResult(null);
     try {
-      const res = await fetch('https://alpha-hackers-1-4hsj.onrender.com/api/predict/freight-rate', {
+      const res = await fetch('/api/predict/freight-rate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ origin, destination: dest, truckType: truck }),
