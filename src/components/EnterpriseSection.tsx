@@ -87,7 +87,7 @@ export default function EnterpriseSection() {
             Built on data. Measured by impact.
           </h2>
           <p className="text-neutral-500 max-w-xl mx-auto">
-            LogisticsNow is building the AI infrastructure layer for India&apos;s $380B logistics market —
+            LogisticsNow is building the AI infrastructure layer for India&apos;s ₹31T+ logistics market —
             with real predictions, real routes, and real enterprise traction.
           </p>
         </motion.div>

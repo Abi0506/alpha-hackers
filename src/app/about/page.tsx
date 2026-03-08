@@ -70,11 +70,11 @@ export default function AboutPage() {
           <h2 className="section-title text-center mb-4">Who We Are</h2>
           <p className="section-subtitle text-center mb-14">A trusted, neutral platform for the logistics industry</p>
 
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-lg text-neutral-600 leading-relaxed mb-8">
+          <div className="max-w-3xl mx-auto">
+            <p className="text-lg text-neutral-600 leading-relaxed mb-8 text-left">
               Several companies, including some of India&apos;s most reputed, are using the LogisticsNow platform to drive business visibility and prepare for the upcoming growth and challenges in the logistics industry.
             </p>
-            <p className="text-lg text-neutral-600 leading-relaxed mb-8">
+            <p className="text-lg text-neutral-600 leading-relaxed mb-8 text-left">
               As the trusted, neutral platform for logistics, we seek to create efficiency which is beyond imagination today. Our initial focus is logistics for large emerging markets like India, where there are significant challenges in terms of lack of business visibility, utilization, transparency, and payments.
             </p>
 
